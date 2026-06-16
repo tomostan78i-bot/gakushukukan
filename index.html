@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>枚方市養父町の自立学習塾 | 学習空間 向日教室［特設サブページ］</title>
+    <title>枚方市養父西町の自立学習塾 | 学習空間 牧野教室［新教室オープン特設ページ］</title>
     <style>
         /* Base Colors: Orange (#FF7F32) and Deep Blue (#1E3A8A) */
         :root {
@@ -23,41 +23,47 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth; /* スムーズにスクロールさせる設定 */
+        }
+
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
             line-height: 1.8;
             color: var(--text-dark);
             background-color: var(--bg-light);
+            padding-top: 130px; /* ヘッダーが固定されるため、上部に余白を作ります */
         }
 
-        .container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
+        /* 📱 固定ヘッダーのデザイン */
         header {
             background-color: var(--white);
             border-bottom: 3px solid var(--primary);
-            padding: 15px 0;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         .header-box {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 10px;
         }
 
         .logo {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: var(--secondary);
             line-height: 1.3;
         }
 
         .sub-logo {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             display: block;
             font-weight: normal;
@@ -67,7 +73,45 @@
             text-align: right;
             font-weight: bold;
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: 1rem;
+        }
+
+        /* 🧭 追加したヘッダーメニュー（ナビゲーション） */
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            background: var(--secondary-light);
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .nav-menu li {
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-menu a {
+            display: block;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 6px 2px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-menu a:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         /* Hero Section */
@@ -101,6 +145,18 @@
             color: #E2E8F0;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .open-badge {
+            display: inline-block;
+            background-color: #E53E3E;
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 6px 25px;
+            border-radius: 4px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         section {
@@ -179,6 +235,18 @@
             border-left: 4px solid var(--primary);
         }
 
+        .campaign-box {
+            background-color: #FFF5F5;
+            border: 2px dashed #E53E3E;
+            color: #C53030;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
         .course-grid {
             display: flex;
             flex-wrap: wrap;
@@ -249,7 +317,7 @@
         }
 
         .profile-image-area {
-            flex: 0 0 250px; /* Width of the photo container */
+            flex: 0 0 250px;
             text-align: center;
         }
 
@@ -262,19 +330,20 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        /* Temporary style for the placeholder when there is no image */
         .photo-placeholder {
             width: 100%;
-            height: 300px;
+            height: 280px;
             background-color: #E2E8F0;
             border: 2px dashed #CBD5E1;
             border-radius: 8px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #64748B;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: bold;
+            padding: 10px;
         }
 
         .profile-box {
@@ -350,6 +419,18 @@
             background-color: var(--primary);
         }
 
+        .welcome-message-box {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 0 6px 6px 0;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
         .btn-cta {
             display: inline-block;
             background-color: var(--primary);
@@ -359,7 +440,7 @@
             padding: 15px 40px;
             border-radius: 30px;
             text-decoration: none;
-            margin: 20px 0;
+            margin: 10px 0 20px 0;
             box-shadow: 0 4px 15px rgba(255,127,50,0.4);
             transition: background-color 0.2s;
         }
@@ -385,10 +466,10 @@
             padding: 20px;
             border-radius: 6px;
             display: inline-block;
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
             text-align: left;
-            margin-top: 20px;
+            margin-top: 25px;
             font-size: 0.9rem;
         }
 
@@ -398,12 +479,12 @@
         }
 
         .contact-info th, .contact-info td {
-            padding: 6px;
+            padding: 8px;
             vertical-align: top;
         }
 
         .contact-info th {
-            width: 110px;
+            width: 120px;
             color: var(--primary);
             text-align: left;
         }
@@ -418,41 +499,54 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header-box { flex-direction: column; text-align: center; gap: 10px; }
+            body { padding-top: 150px; } /* スマホはヘッダーが縦に伸びるため余白を調整 */
+            .header-box { flex-direction: column; text-align: center; gap: 5px; }
+            .nav-menu a { font-size: 0.7rem; padding: 4px 1px; }
             .intro-grid { flex-direction: column; }
             .course-card { flex: 1 1 100%; }
             .profile-container { flex-direction: column; align-items: center; }
             .profile-image-area { flex: 1; width: 100%; }
-            .hero h1 { font-size: 1.5rem; }
+            .hero h1 { font-size: 1.4rem; }
             .tel-display { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- 固定ヘッダー部分 -->
     <header>
         <div class="container">
             <div class="header-box">
                 <div class="logo">
-                    <span class="sub-logo">枚方市養父町の個別指導・自立学習塾</span>
-                    学習空間 向日教室［枚方サブページ］
+                    <span class="sub-logo">枚方市養父西町の個別指導・自立学習塾</span>
+                    学習空間 牧野教室［新教室オープン特設ページ］
                 </div>
-                <div class="header-tel">お電話でのご相談はこちら</div>
+                <!-- 💡 【ここを修正！】お電話の文字や番号を変えたい場合はここを書き換えてください -->
+                <div class="header-tel">お電話：000-111-2222</div>
             </div>
+            
+            <!-- 🧭 ご要望のヘッダーメニュー（5つのナビゲーション） -->
+            <ul class="nav-menu">
+                <li><a href="#intro">①どんな塾？</a></li>
+                <li><a href="#course">②料金・体系</a></li>
+                <li><a href="#profile">③講師紹介</a></li>
+                <li><a href="#voice">④保護者の声</a></li>
+                <li><a href="#contact">⑤無料体験</a></li>
+            </ul>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
             <div class="hero-target">楠葉中・招提中・第三中・中宮中・杉中・招提小・殿山第二小 校区エリア</div>
-            <!-- 新しいキャッチコピーに書き換えました -->
             <h1>自分の力で勉強できるように生徒を育てる、<br>オーダーメイドの個別指導塾</h1>
             <p>本社の安心感ある指導体制はそのままに、この地域に根ざした独自の対話と「解き直し」の徹底で、自ら選択し行動できる学力を育てます。</p>
+            <div class="open-badge">2026年9月30日 新規開校！先行予約受付中</div>
         </div>
     </section>
 
-    <!-- 1. 学習空間という塾の紹介 -->
-    <section class="intro-section">
+    <!-- 1. 「学習空間」とはどんな塾？ -->
+    <section id="intro" class="intro-section">
         <div class="container">
             <div class="section-title">
                 <h2>1. 「学習空間」とはどんな塾？</h2>
@@ -476,12 +570,16 @@
     </section>
 
     <!-- 2. 指導の例 および料金 -->
-    <section class="course-section">
+    <section id="course" class="course-section">
         <div class="container">
             <div class="section-title">
                 <h2>2. 指導の例 および料金</h2>
             </div>
             
+            <div class="campaign-box">
+                🎉 新教室オープン記念特典：入会費・年会費は【すべて無料】です！
+            </div>
+
             <div class="course-intro">
                 <p><strong>※以下はあくまで指導の一例です。</strong>一人ひとりに合わせた学習内容を相談して決めてしていきます。勉強のやり方と学習習慣を身につけるための参考にご覧ください。</p>
             </div>
@@ -571,25 +669,25 @@
         </div>
     </section>
 
-    <!-- 3. 講師紹介（写真の土台を追加） -->
-    <section class="profile-section">
+    <!-- 3. 講師紹介 -->
+    <section id="profile" class="profile-section">
         <div class="container">
             <div class="section-title">
                 <h2>3. 講師（教室長）紹介</h2>
             </div>
             <div class="profile-container">
                 
-                <!-- 【写真の土台エリア】 -->
                 <div class="profile-image-area">
-                    <!-- 写真が準備できたら、下のコメントアウト（<!-- -->）を解除して、画像ファイルを指定してください。現在は仮のグレーボックスが表示されます。 -->
-                    <!-- <img src="teacher-saya.jpg" alt="教室長 Saya" class="instructor-photo"> -->
-                    <div class="photo-placeholder">ここに講師の顔写真が<br>入ります</div>
+                    <div class="photo-placeholder">
+                        <span>【他教室の写真例】</span>
+                        <span style="font-size:0.75rem; font-weight:normal; margin-top:5px; color:#94A3B8;">※準備ができたら画像に差し替わります</span>
+                    </div>
                 </div>
 
                 <div class="profile-box">
                     <div class="profile-badge">教室長・マネージャー：Saya</div>
                     <h3>「全員が自分の人生の主人公として歩んでほしい」</h3>
-                    <p>普段はやさしく、おしゃべりで、生徒たちと雑談を交えながら楽しく教室を盛り上げています。イベント好きで面白いことが大好きな平成生まれですが、指導に関しては昭和の人間のように熱く泥臭い一面も持っています。厳しい時はめっちゃ厳しい、でも褒める時は涙もろくなるほど全力で褒める、そんな「愛のある指導」を大切にしています。</p>
+                    <p>普段はやさしく、おしゃべりで、生徒たちと雑談を交えながら楽しく教室を盛り上げています。イベント好きで面白いことが大好きな平成生まれですが、指導に関しては昭和の人間のように熱く泥臭い一面も持っています。厳しい時はめっちゃ厳しい,でも褒める時は涙もろくなるほど全力で褒める、そんな「愛のある指導」を大切にしています。</p>
                     <p><strong>【指導上ゆずれない大切なこと】</strong><br>
                     生徒が周囲に流されず、自ら選択し、行動して、より良い結果を各々で求められるようになること。間違えてしまったことでも、本人が自分で考えて行動した結果なら、それは絶対に良いことです。失敗を恐れず、自分の人生を精一杯楽しめる大人になれるよう、鋭い観察眼で生徒一人ひとりの様子をつぶさに見守り、家庭での学習習慣が変わるまでとことん伴走します。</p>
                 </div>
@@ -597,8 +695,8 @@
         </div>
     </section>
 
-    <!-- 4. 生徒、保護者様の声（どのように成績が変わったのか） -->
-    <section class="voice-section">
+    <!-- 4. 生徒、保護者様の声 -->
+    <section id="voice" class="voice-section">
         <div class="container">
             <div class="section-title">
                 <h2>4. 生徒・保護者様の声（どのように成績が変わったのか）</h2>
@@ -615,18 +713,97 @@
                 <div class="voice-title">「『お母さんの言うことを分かっています。信じて少し待って』という言葉通り、本当に子どもの行動が変わりました」</div>
                 <div class="voice-text">思春期ということもあり、受験期に友だちとの問題も重なって精神的に荒れ、家庭内がこじれてしまいました。塾とは関係のない相談だったにもかかわらず、先生は親の私の心のフォローまでしてくださり、子どもを信じるきっかけをくれました。今では「高校に入っても継続して先生に指導をお願いしたい」と親子でファンになっています。親の私が学生の時に、こんな先生がいてくれたらよかったです。</div>
             </div>
+
+            <!-- 📸 実際のLINE・口コミの画像掲載エリア -->
+            <h3 style="text-align: center; font-size: 1.2rem; color: var(--secondary); margin: 40px 0 20px 0;">
+                ✉️ 保護者様との実際のLINE・Googleマップの口コミ
+            </h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 30px; max-width: 600px; margin: 0 auto;">
+                
+                <!-- 1枚目 -->
+                <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
+                    <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">① 不登校を克服された親御様とのLINE</div>
+                    <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに1枚目のスクショが入ります</div>
+                </div>
+
+                <!-- 2枚目 -->
+                <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
+                    <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">② 家庭内での学習習慣の変化についてのLINE</div>
+                    <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに2枚目のスクショが入ります</div>
+                </div>
+
+                <!-- 3枚目 -->
+                <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
+                    <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">③ 受験期の三者面談後の温かい感謝のLINE</div>
+                    <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに3枚目のスクショが入ります</div>
+                </div>
+
+                <!-- 4枚目 -->
+                <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
+                    <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">④ Googleマップに寄せられた前任校での口コミ評価①</div>
+                    <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに4枚目のスクショが入ります</div>
+                </div>
+
+                <!-- 5枚目 -->
+                <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
+                    <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">⑤ Googleマップに寄せられた前任校での口コミ評価②</div>
+                    <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに5枚目のスクショが入ります</div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- 5. 無料体験申込、電話番号 -->
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-title">
                 <h2>5. まずは無料体験授業・学習相談へ</h2>
             </div>
-            <p>教室の様子や、お子様に合わせた具体的な学習計画（解き直しの仕組み）について、<br>まずは雑談を交えて気軽にお話ししてみませんか？</p>
+            
+            <div class="welcome-message-box">
+                🍀 <strong>塾がちょっぴり苦手なお子様へ、親御様へ</strong><br>
+                当塾の体験は、いきなり席に座らせて難しいテストをしたり、お勉強を強制したりすることは絶対にありません。「最近学校どう？」「どんなことが好きなの？」といった、肩の力を抜いたおしゃべりからスタートする、優しい『お試しカウンセリング』です。<br>
+                まずは1週間、教室の空気を感じに来てみてください。お子様のペースを見極めながら、ゆっくり、少しずつレベルを上げて、できた喜びを感じられる問題演習に一緒に取り組んでいきましょう。もちろん、無理な勧誘は一切いたしません。安心してお気軽に遊びに来てくださいね。
+            </div>
             
             <a href="https://gakushu-kukan.com/kyoto/muko/" class="btn-cta" target="_blank">無料体験授業・ご相談を申し込む</a>
             
             <p style="margin-top: 10px;">お電話での直接のご相談はこちら（「枚方の特設ページを見た」とお伝えください）</p>
-    
+            <!-- 💡 【ここを修正！】お電話番号の見た目を変えたい場合は 000-111-2222 を書き換えてください -->
+            <div class="tel-display"><a href="tel:0001112222">📞 000-111-2222</a></div>
+            <p style="font-size: 0.85rem; opacity: 0.8;">※スマホの方は番号をタップでお電話が発信できます。折り返しは Saya よりご連絡いたします。</p>
+
+            <div class="contact-info">
+                <table>
+                    <tr>
+                        <th>教室所在地</th>
+                        <td>〒573-1141 大阪府枚方市養父西町32-8</td>
+                    </tr>
+                    <tr>
+                        <th>アクセス・立地</th>
+                        <td>京阪本線「牧野駅」から徒歩圏内、コノミヤ牧野店や養父東公園の周辺エリアです。楠葉・招提・牧野周辺の主要幹線道路からもアクセスしやすく、周辺の中学校・小学校から自転車でも安全に通塾いただける、静かで学習に最適な環境に位置しています。</td>
+                    </tr>
+                    <tr>
+                        <th>主な対象校</th>
+                        <td>楠葉中、招提中、枚方第三中、中宮中、杉中、招提小、殿山第二小 など近隣小中学校</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 学習空間 向日教室 All Rights Reserved. (Hirakata Local Satelite Page)</p>
+        </div>
+    </footer>
+
+</body>
+</html>
