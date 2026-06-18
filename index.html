@@ -376,6 +376,132 @@
             background-color: var(--bg-light);
         }
 
+        /* 📊 コース簡易診断セクション用CSS */
+        .diagnostic-section {
+            background-color: var(--white);
+        }
+
+        .diagnostic-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background: var(--bg-light);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .diag-step {
+            display: none;
+        }
+
+        .diag-step.active {
+            display: block;
+            animation: diagFadeIn 0.4s ease;
+        }
+
+        @keyframes diagFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .diag-question {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: var(--secondary);
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .diag-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .diag-btn {
+            background: var(--white);
+            border: 2px solid #CBD5E1;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .diag-btn:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        .result-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 6px solid var(--primary);
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .result-course {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .result-reason {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .result-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: var(--secondary-light);
+            padding: 10px 15px;
+            border-radius: 6px;
+            line-height: 1.6;
+        }
+
+        .diag-cta-btn {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: var(--white);
+            padding: 16px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(255, 127, 50, 0.3);
+            transition: background 0.2s;
+            margin-bottom: 15px;
+        }
+
+        .diag-cta-btn:hover {
+            background: #e66e28;
+        }
+
+        .prev-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
         /* 5. Contact Section */
         .contact-section {
             background-color: var(--secondary);
@@ -480,12 +606,15 @@
             .profile-image-area { flex: 1; width: 100%; }
             .hero h1 { font-size: 1.4rem; }
             .tel-display { font-size: 1.6rem; }
+            .diagnostic-container { padding: 20px 15px; }
+            .diag-question { font-size: 1.1rem; }
+            .diag-btn { font-size: 0.95rem; padding: 15px; }
+            .result-course { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 固定ヘッダー部分 -->
     <header>
         <div class="container">
             <div class="header-box">
@@ -493,11 +622,9 @@
                     <span class="sub-logo">枚方市養父西町の個別指導・自立学習塾</span>
                     学習空間 牧野教室［新教室オープン特設ページ］
                 </div>
-                <!-- 💡 【ここを修正！】お電話の文字や番号を変えたい場合はここを書き換えてください -->
                 <div class="header-tel">お電話：000-111-2222</div>
             </div>
             
-            <!-- 🧭 ご要望のヘッダーメニュー（5つのナビゲーション） -->
             <ul class="nav-menu">
                 <li><a href="#intro">①どんな塾？</a></li>
                 <li><a href="#course">②料金・体系</a></li>
@@ -517,7 +644,6 @@
         </div>
     </section>
 
-    <!-- 1. 「学習空間」とはどんな塾？ -->
     <section id="intro" class="intro-section">
         <div class="container">
             <div class="section-title">
@@ -527,7 +653,7 @@
             <div class="intro-grid">
                 <div class="intro-card">
                     <h3>【自立学習の徹底】</h3>
-                    <p>当塾は、生徒が自ら進んで学ぶ姿勢を育みます「自分で問題を解き、自分で解説を理解し、もう一度解き直す」というサイクルを身につけ、受け身の姿勢から自立した学習姿勢を身につけます</p>
+                    <p>当塾は、生徒が自ら進んで学ぶ姿勢を育みます「自分で問題を解り、自分で解説を理解し、もう一度解き直す」というサイクルを身につけ、受け身の姿勢から自立した学習姿勢を身につけます</p>
                 </div>
                 <div class="intro-card">
                     <h3>【安心の個別カリキュラム】</h3>
@@ -541,7 +667,6 @@
         </div>
     </section>
 
-    <!-- 2. 指導の例 および料金 -->
     <section id="course" class="course-section">
         <div class="container">
             <div class="section-title">
@@ -557,7 +682,6 @@
             </div>
 
             <div class="course-grid">
-                <!-- 小学校 中学年 -->
                 <div class="course-card">
                     <h3>小学校 中学年（3・4年生）では</h3>
                     <div class="course-detail">
@@ -570,7 +694,6 @@
                     <div class="course-fee">お月謝 ￥10,400 <span>+ 教室維持費</span></div>
                 </div>
 
-                <!-- 小学校 高学年 -->
                 <div class="course-card">
                     <h3>小学校 高学年（5・6年生）では</h3>
                     <div class="course-detail">
@@ -586,7 +709,6 @@
                     </div>
                 </div>
 
-                <!-- 中学 1・2年生 -->
                 <div class="course-card">
                     <h3>中学 1・2年生では</h3>
                     <div class="course-detail">
@@ -599,7 +721,6 @@
                     <div class="course-fee">お月謝 ￥23,400 <span>+ 教室維持費</span></div>
                 </div>
 
-                <!-- 中学 3年生 -->
                 <div class="course-card">
                     <h3>中学 3年生では</h3>
                     <div class="course-detail">
@@ -612,7 +733,6 @@
                     <div class="course-fee">お月謝 ￥31,800 <span>+ 教室維持費</span></div>
                 </div>
 
-                <!-- 高校 1・2年生 -->
                 <div class="course-card">
                     <h3>高校 1・2年生では</h3>
                     <div class="course-detail">
@@ -625,7 +745,6 @@
                     <div class="course-fee">お月謝 ￥25,700 <span>+ 教室維持費</span></div>
                 </div>
 
-                <!-- 高校 3年生 -->
                 <div class="course-card">
                     <h3>高校 3年生では</h3>
                     <div class="course-detail">
@@ -641,7 +760,6 @@
         </div>
     </section>
 
-    <!-- 3. 講師紹介 -->
     <section id="profile" class="profile-section">
         <div class="container">
             <div class="section-title">
@@ -667,51 +785,39 @@
         </div>
     </section>
 
-    <!-- 4. 生徒、保護者様の声 -->
     <section id="voice" class="voice-section">
         <div class="container">
             <div class="section-title">
                 <h2>4. 生徒・保護者様の声（どのように成績が変わったのか）</h2>
             </div>
 
-            <!-- 📸 実際のLINE・口コミの画像掲載エリア -->
             <h3 style="text-align: center; font-size: 1.2rem; color: var(--secondary); margin: 0 0 20px 0;">
                 ✉️ 保護者様との実際のLINE・Googleマップの口コミ
             </h3>
             
             <div style="display: flex; flex-direction: column; gap: 30px; max-width: 600px; margin: 0 auto;">
                 
-                <!-- 1枚目 -->
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">① 不登校を克服された親御様とのLINE</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに1枚目のスクショが入ります</div>
                 </div>
 
-                <!-- 2枚目 -->
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">② 家庭内での学習習慣の変化についてのLINE</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに2枚目のスクショが入ります</div>
                 </div>
 
-                <!-- 3枚目 -->
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">③ 受験期の三者面談後の温かい感謝のLINE</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに3枚目のスクショが入ります</div>
                 </div>
 
-                <!-- 4枚目 -->
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">④ Googleマップに寄せられた前任校での口コミ評価①</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに4枚目のスクショが入ります</div>
                 </div>
 
-                <!-- 5枚目 -->
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <!-- 💡 【ここを修正！】タイトル文字を変えたい場合はここを書き換えてください -->
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">⑤ Googleマップに寄せられた前任校での口コミ評価②</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに5枚目のスクショが入ります</div>
                 </div>
@@ -720,7 +826,51 @@
         </div>
     </section>
 
-    <!-- 5. 無料体験申込、電話番号 -->
+    <section id="diagnostic" class="diagnostic-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>あなたにぴったりのコース診断</h2>
+            </div>
+            
+            <div class="diagnostic-container">
+                <div class="diag-step active" id="step1">
+                    <div class="diag-question">Q1. お子様の現在の学年を選択してください。</div>
+                    <div class="diag-options">
+                        <button class="diag-btn" onclick="nextStep(1, 'grade', 'elem14')">小学生（1〜4年）</button>
+                        <button class="diag-btn" onclick="nextStep(1, 'grade', 'elem56')">小学生（5〜6年）</button>
+                        <button class="diag-btn" onclick="nextStep(1, 'grade', 'mid13')">中学生（1〜3年）</button>
+                        <button class="diag-btn" onclick="nextStep(1, 'grade', 'high13')">高校生（1〜3年）</button>
+                    </div>
+                </div>
+
+                <div class="diag-step" id="step2">
+                    <div class="diag-question">Q2. 塾に通う主な目的は何ですか？</div>
+                    <div class="diag-options" id="q2-options">
+                        </div>
+                    <button class="prev-btn" onclick="prevStep(2)">← 前へ戻る</button>
+                </div>
+
+                <div class="diag-step" id="step3">
+                    <div class="diag-question" id="q3-question">Q3. 指導内容への具体的なご要望はありますか？</div>
+                    <div class="diag-options" id="q3-options">
+                        </div>
+                    <button class="prev-btn" onclick="prevStep(3)">← 前へ戻る</button>
+                </div>
+
+                <div class="diag-step" id="step-result">
+                    <div class="diag-question">診断結果：おすすめの最適コース</div>
+                    <div class="result-box">
+                        <div class="result-course" id="res-course"></div>
+                        <div class="result-reason" id="res-reason"></div>
+                        <div class="result-note" id="res-note"></div>
+                    </div>
+                    <a href="#contact" class="diag-cta-btn">このコースで無料体験・相談を申し込む</a>
+                    <button class="prev-btn" onclick="restart()">もう一度診断する</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-title">
@@ -736,7 +886,6 @@
             <a href="https://gakushu-kukan.com/kyoto/muko/" class="btn-cta" target="_blank">無料体験授業・ご相談を申し込む</a>
             
             <p style="margin-top: 10px;">お電話での直接のご相談はこちら（「枚方の特設ページを見た」とお伝えください）</p>
-            <!-- 💡 【ここを修正！】お電話番号の見た目を変えたい場合は 000-111-2222 を書き換えてください -->
             <div class="tel-display"><a href="tel:0001112222">📞 000-111-2222</a></div>
             <p style="font-size: 0.85rem; opacity: 0.8;">※スマホの方は番号をタップでお電話が発信できます。折り返しは 佐谷 よりご連絡いたします。</p>
 
@@ -765,5 +914,177 @@
         </div>
     </footer>
 
+    <script>
+        let answers = { grade: '', purpose: '', support: '' };
+
+        function nextStep(currentStep, key, value) {
+            answers[key] = value;
+
+            if (currentStep === 1) {
+                setupStep2();
+                switchStep(1, 2);
+            } else if (currentStep === 2) {
+                if (answers.purpose === 'exam' && (answers.grade === 'elem14' || answers.grade === 'elem56')) {
+                    // 小学生の中学受験はQ3不要のため直接結果へ
+                    showResult();
+                } else {
+                    setupStep3();
+                    switchStep(2, 3);
+                }
+            } else if (currentStep === 3) {
+                showResult();
+            }
+        }
+
+        function prevStep(currentStep) {
+            if (currentStep === 3 && (answers.purpose === 'exam' && (answers.grade === 'elem14' || answers.grade === 'elem56'))) {
+                switchStep(3, 1);
+            } else {
+                switchStep(currentStep, currentStep - 1);
+            }
+        }
+
+        function switchStep(from, to) {
+            document.getElementById(`step${from === 'result' ? '-result' : from}`).classList.remove('active');
+            document.getElementById(`step${to === 'result' ? '-result' : to}`).classList.add('active');
+        }
+
+        function restart() {
+            answers = { grade: '', purpose: '', support: '' };
+            switchStep('result', 1);
+        }
+
+        function setupStep2() {
+            const container = document.getElementById('q2-options');
+            let html = '';
+
+            if (answers.grade === 'high13') {
+                html += `<button class="diag-btn" onclick="nextStep(2, 'purpose', 'test')">学校の予習・復習、定期テストの点数を上げたい</button>`;
+                html += `<button class="diag-btn" onclick="nextStep(2, 'purpose', 'exam')">志望校への合格、大学受験対策をしたい</button>`;
+            } else if (answers.grade === 'mid13') {
+                html += `<button class="diag-btn" onclick="nextStep(2, 'purpose', 'test')">学校の予習・復習、定期テストの点数を上げたい</button>`;
+                html += `<button class="diag-btn" onclick="nextStep(2, 'purpose', 'exam')">志望校への合格、高校受験対策をしたい</button>`;
+            } else {
+                html += `<button class="diag-btn" onclick="nextStep(2, 'purpose', 'test')">基礎学力の定着・学校の予習復習</button>`;
+                html += `<button class="diag-btn" onclick="nextStep(2, 'purpose', 'exam')">中学受験対策をしたい</button>`;
+            }
+            container.innerHTML = html;
+        }
+
+        function setupStep3() {
+            const qTitle = document.getElementById('q3-question');
+            const container = document.getElementById('q3-options');
+            let html = '';
+
+            if (answers.grade === 'high13' && answers.purpose === 'exam') {
+                qTitle.innerText = "Q3. 大学受験において、推薦入試の対策も合わせて必要ですか？";
+                html += `<button class="diag-btn" onclick="nextStep(3, 'support', 'yes')">はい、推薦対策も合わせてしっかりと行いたい</button>`;
+                html += `<button class="diag-btn" onclick="nextStep(3, 'support', 'no')">いいえ、一般入試の対策をメインに進めたい</button>`;
+            } else {
+                qTitle.innerText = "Q3. 現在の学習状況について教えてください。";
+                html += `<button class="diag-btn" onclick="nextStep(3, 'support', 'yes')">特に苦戦している内容があり、詳しく・手厚い指導が欲しい</button>`;
+                html += `<button class="diag-btn" onclick="nextStep(3, 'support', 'no')">まずは標準的なプラン・進度でスタートしたい</button>`;
+            }
+            container.innerHTML = html;
+        }
+
+        function showResult() {
+            let course = '';
+            let reason = '';
+            let note = '';
+
+            const g = answers.grade;
+            const p = answers.purpose;
+            const s = answers.support;
+
+            // 小1〜小4
+            if (g === 'elem14') {
+                if (p === 'test') {
+                    if (s === 'yes') {
+                        course = "学習定着コース（算国） 週2回90分 ＋ 苦戦内容徹底個別フォロー";
+                        reason = "低学年のうちに学習定着を図りつつ、現在お子様が最も苦戦している単元について詳しく、手厚くアプローチを行う学習環境が最適です。";
+                    } else {
+                        course = "学習定着コース（算国） 週2回90分";
+                        reason = "算数・国語の重要基礎をじっくり学び、正しい勉強のやり方と、自立した学習習慣の土台を無理なく確実に作っていきます。";
+                    }
+                } else if (p === 'exam') {
+                    course = "中学受験（必要科目）コース 週3回2時間";
+                    reason = "中学受験に向け、早い段階から必須単元の深い理解と論理的思考力を無理なく育み、自信を持って受験準備を進めるコースです。";
+                }
+            }
+            // 小5〜小6
+            else if (g === 'elem56') {
+                if (p === 'test') {
+                    if (s === 'yes') {
+                        course = "学習定着コース（算国英） 週3回90分 ＋ 週1回の少人数制指導";
+                        reason = "小学校高学年の重要3科目の基盤をしっかり定着させながら、週1回追加される手厚い少人数制指導でお子様が苦戦している内容を根本から解消します。";
+                    } else {
+                        course = "学習定着コース（算国英） 週3回 90分";
+                        reason = "算数・国語の総復習に加え、中学校進学後に大きな差がつきやすい「英語」も網羅し、新環境への万全な備えを進めるコースです。";
+                    }
+                } else if (p === 'exam') {
+                    course = "中学受験コース（必要科目） 週3回3時間";
+                    reason = "志望校合格に向けて実践的な得点力を磨き上げる、高学年対象の中学受験専門の集中指導カリキュラムです。";
+                }
+            }
+            // 中1〜中3
+            else if (g === 'mid13') {
+                if (p === 'test') {
+                    if (s === 'yes') {
+                        course = "定期テスト対策コース（英数） 週3回2時間30分 ＋ 週1回の少人数制指導";
+                        reason = "最も重要な主要2科目を軸とし、さらに週1回の少人数制指導で苦手分野や苦戦しているポイントを徹底指導！確実な内申点アップを目指します。";
+                        note = "※最も要望の多い英数をベースとしたものです。他科目や検定についても相談を承り、最適な学習環境を提案致します！";
+                    } else {
+                        course = "定期テスト対策コース（英数） 週3回2時間30分";
+                        reason = "最も差がつきやすく要望の多い「英語・数学」に重きを置き、学校の教科書や進度に完全準拠した指導で定期テストの高得点獲得を狙います。";
+                        note = "※最も要望の多い英数をベースにしたものです。他科目や検定についてももちろん柔軟に相談を承ります！";
+                    }
+                } else if (p === 'exam') {
+                    if (s === 'yes') {
+                        course = "受験対策コース 週4回3時間 ＋ 週1回の少人数制指導";
+                        reason = "高校入試を突破する圧倒的な演習量を確保しつつ、週1回の少人数指導によって過去問や記述対策、つまずきやすい箇所の補正を徹底して行います。";
+                        note = "※科目や検定についても細かく相談を承り、お子様に最も最適な学習環境を提案致します！";
+                    } else {
+                        course = "受験対策コース 週4回3時間";
+                        reason = "高校受験合格に向け、必須5教科の出題傾向を徹底分析。頻出パターンの網羅と実践的な解答能力を日々鍛え上げる合格特化型コースです。";
+                        note = "※科目や検定についても相談を承り、最適な学習環境を提案致します！";
+                    }
+                }
+            }
+            // 高校生
+            else if (g === 'high13') {
+                if (p === 'test') {
+                    if (s === 'yes') {
+                        course = "定期テスト対策コース（英数） 週3×2時間30分 ＋ 週1回の少人数制指導";
+                        reason = "高校の広大なテスト範囲に対応するため、英数を軸に据えつつ、理解度が不足している苦戦単元を週1回の少人数指導で手厚く集中補習します。";
+                    } else {
+                        course = "定期テスト対策コース（英数） 週3×2時間30分";
+                        reason = "大学の推薦入試などを見据え、学校の評定（内申点）を最大化させるために学校の授業進度に合わせて着実に得点力を養成するコースです。";
+                    }
+                } else if (p === 'exam') {
+                    if (s === 'yes') {
+                        course = "大学受験対策コース 週3×3時間 ＋ 週1回の少人数制指導（推薦・総合型対策対応）";
+                        reason = "一般受験向けのコア指導（週3回）に加え、週1回の枠を用いて志望理由書の添削、小論文対策、面接指導といった推薦入試対策も同時並行で徹底的に行います。";
+                    } else {
+                        course = "大学受験対策コース 週3×3時間";
+                        reason = "志望大学の出題傾向を緻密に紐解き、合格ラインに必要な実践力を「3時間×週3回」の濃厚な演習と解説で徹底的に培う一般受験特化プランです。";
+                    }
+                }
+            }
+
+            document.getElementById('res-course').innerText = course;
+            document.getElementById('res-reason').innerText = reason;
+            
+            const noteEl = document.getElementById('res-note');
+            if (note) {
+                noteEl.innerText = note;
+                noteEl.style.display = 'block';
+            } else {
+                noteEl.style.display = 'none';
+            }
+
+            switchStep(3, 'result');
+        }
+    </script>
 </body>
 </html>
