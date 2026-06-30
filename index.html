@@ -15,6 +15,7 @@
             --text-muted: #607D8B;
             --bg-light: #FAFAFA;
             --white: #FFFFFF;
+            --line-green: #06C755; /* LINE公式カラー */
         }
 
         * {
@@ -529,26 +530,96 @@
             line-height: 1.7;
         }
 
+        /* 📱 追加：コンタクト方法の横並び/縦並びコントロール */
+        .contact-methods-grid {
+            display: flex;
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            align-items: stretch;
+        }
+
+        .contact-method-card {
+            flex: 1;
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-method-card h3 {
+            font-size: 1.15rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .contact-method-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        /* ボタン類の装飾 */
         .btn-cta {
-            display: inline-block;
+            display: block;
             background-color: var(--primary);
             color: var(--white);
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: bold;
-            padding: 15px 40px;
+            padding: 12px 20px;
             border-radius: 30px;
             text-decoration: none;
-            margin: 10px 0 20px 0;
-            box-shadow: 0 4px 15px rgba(255,127,50,0.4);
+            box-shadow: 0 4px 12px rgba(255,127,50,0.3);
             transition: background-color 0.2s;
+            text-align: center;
         }
 
         .btn-cta:hover {
             background-color: #e66e28;
         }
 
+        .btn-line {
+            display: block;
+            background-color: var(--line-green);
+            color: var(--white);
+            font-size: 1.15rem;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
+            transition: background-color 0.2s;
+            text-align: center;
+        }
+
+        .btn-line:hover {
+            background-color: #05b34c;
+        }
+
+        /* 📋 フォーム埋め込みエリアのスタイル */
+        .form-embed-container {
+            max-width: 800px;
+            margin: 40px auto 20px auto;
+            background: var(--white);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-embed-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 6px;
+        }
+
         .tel-display {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             margin: 15px 0;
             color: var(--white);
@@ -605,6 +676,8 @@
             .profile-container { flex-direction: column; align-items: center; }
             .profile-image-area { flex: 1; width: 100%; }
             .hero h1 { font-size: 1.4rem; }
+            .contact-methods-grid { flex-direction: column; gap: 20px; }
+            .form-embed-container iframe { height: 700px; } /* スマホはフォームを少し縦長に */
             .tel-display { font-size: 1.6rem; }
             .diagnostic-container { padding: 20px 15px; }
             .diag-question { font-size: 1.1rem; }
@@ -657,7 +730,7 @@
                 </div>
                 <div class="intro-card">
                     <h3>【安心の個別カリキュラム】</h3>
-                    <p>全国展開の信頼ある基盤をもとに、生徒一人ひとりの現在の学力や志望校に合わせた完全個別の学習ルートを設計。生徒1人1人の目標に沿って全力でサポートしていきます。</p>
+                    <p>全国展開 of 信頼ある基盤をもとに、生徒一人ひとりの現在の学力や志望校に合わせた完全個別の学習ルートを設計。生徒1人1人の目標に沿って全力でサポートしていきます。</p>
                 </div>
                 <div class="intro-card">
                     <h3>【安心の定額制・通い放題】</h3>
@@ -796,32 +869,26 @@
             </h3>
             
             <div style="display: flex; flex-direction: column; gap: 30px; max-width: 600px; margin: 0 auto;">
-                
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">① 不登校を克服された親御様とのLINE</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに1枚目のスクショが入ります</div>
                 </div>
-
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">② 家庭内での学習習慣の変化についてのLINE</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに2枚目のスクショが入ります</div>
                 </div>
-
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">③ 受験期の三者面談後の温かい感謝のLINE</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに3枚目のスクショが入ります</div>
                 </div>
-
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">④ Googleマップに寄せられた前任校での口コミ評価①</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに4枚目のスクショが入ります</div>
                 </div>
-
                 <div style="background: var(--white); padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                     <div style="font-weight: bold; color: var(--primary); font-size: 0.9rem; margin-bottom: 8px;">⑤ Googleマップに寄せられた前任校での口コミ評価②</div>
                     <div style="width:100%; height:150px; background:#E2E8F0; border:2px dashed #CBD5E1; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#64748B; font-size:0.85rem;">ここに5枚目のスクショが入ります</div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -864,7 +931,7 @@
                         <div class="result-reason" id="res-reason"></div>
                         <div class="result-note" id="res-note"></div>
                     </div>
-                    <a href="#contact" class="diag-cta-btn">このコースで無料体験・相談を申し込む</a>
+                    <a href="#contact-anchor" class="diag-cta-btn">このコースで無料体験・相談を申し込む</a>
                     <button class="prev-btn" onclick="restart()">もう一度診断する</button>
                 </div>
             </div>
@@ -872,6 +939,7 @@
     </section>
 
     <section id="contact" class="contact-section">
+        <div id="contact-anchor"></div>
         <div class="container">
             <div class="section-title">
                 <h2>5. まずは無料体験授業・学習相談へ</h2>
@@ -883,9 +951,29 @@
                 まずは1週間、教室の空気を感じに来てみてください。お子様のペースを見極めながら、ゆっくり、少しずつレベルを上げて、できた喜びを感じられる問題演習に一緒に取り組んでいきましょう。もちろん、無理な勧誘は一切いたしません。安心してお気軽に教室を見に来てくださいね。
             </div>
             
-            <a href="https://gakushu-kukan.com/kyoto/muko/" class="btn-cta" target="_blank">無料体験授業・ご相談を申し込む</a>
+            <div class="contact-methods-grid">
+                <div class="contact-method-card">
+                    <div>
+                        <h3>① Webから申し込む</h3>
+                        <p>24時間受付中。下の専用Googleフォームに必要事項をご記入の上、送信してください。</p>
+                    </div>
+                    <a href="#google-form-area" class="btn-cta">下部の入力フォームへ</a>
+                </div>
+
+                <div class="contact-method-card">
+                    <div>
+                        <h3>② LINEでかんたん予約・相談</h3>
+                        <p>教室の公式LINE（ビジネスライン）です。友だち追加後、チャット感覚で体験希望の日時や学習相談をいつでも気軽にお送りいただけます。</p>
+                    </div>
+                    <a href="https://line.me/R/ti/p/@ご自身のLINEアカウントID" class="btn-line" target="_blank">💬 公式LINEでお問い合わせ</a>
+                </div>
+            </div>
+
+            <div id="google-form-area" class="form-embed-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf76_Bv_v6XshT_IqTqN7D8V_mCHJAt_oIDyVwQe2V61uJ_pw/viewform?embedded=true">読み込んでいます…</iframe>
+            </div>
             
-            <p style="margin-top: 10px;">お電話での直接のご相談はこちら（「枚方の特設ページを見た」とお伝えください）</p>
+            <p style="margin-top: 40px;">お電話での直接のご相談はこちら（「枚方の特設ページを見た」とお伝えください）</p>
             <div class="tel-display"><a href="tel:0001112222">📞 000-111-2222</a></div>
             <p style="font-size: 0.85rem; opacity: 0.8;">※スマホの方は番号をタップでお電話が発信できます。折り返しは 佐谷 よりご連絡いたします。</p>
 
@@ -925,7 +1013,6 @@
                 switchStep(1, 2);
             } else if (currentStep === 2) {
                 if (answers.purpose === 'exam' && (answers.grade === 'elem14' || answers.grade === 'elem56')) {
-                    // 小学生の中学受験はQ3不要のため直接結果へ
                     showResult();
                 } else {
                     setupStep3();
@@ -1067,7 +1154,7 @@
                         reason = "一般受験向けのコア指導（週3回）に加え、週1回の枠を用いて志望理由書の添削、小論文対策、面接指導といった推薦入試対策も同時並行で徹底的に行います。";
                     } else {
                         course = "大学受験対策コース 週3×3時間";
-                        reason = "志望大学の出題傾向を緻密に紐解き、合格ラインに必要な実践力を「3時間×週3回」の濃厚な演習と解説で徹底的に培う一般受験特化プランです。";
+                        reason = "志望大学の出題傾向を緻密に紐解き、合格ラインに必要な実践力を「3時間×週3回」の濃厚な演習 and 解説で徹底的に培う一般受験特化プランです。";
                     }
                 }
             }
